@@ -19,6 +19,8 @@ model Post {
   published Boolean  @default(false)
   authorId  Int
   User      User     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([authorId])
 }
 
 model Profile {
